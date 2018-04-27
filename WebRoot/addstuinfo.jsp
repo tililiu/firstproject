@@ -23,7 +23,8 @@
 <body>
 	<div class="container">
 		<h3 class="text-center">学生信息录入</h3>
-		<form class="form-horizontal" action="addstuinfo_result.jsp" method="post">
+		<form class="form-horizontal" action="addstuinfo_result.jsp"
+			method="post">
 			<div class="form-group">
 				<label for="nickname" class="col-sm-2 control-label">昵称</label>
 				<div class="col-sm-10">
