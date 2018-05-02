@@ -25,7 +25,8 @@
 <body>
 	<jsp:useBean id="stuInfoService" class="com.first.service.studentInfoService"></jsp:useBean>
 	
-	<div class="container">
+	<div class="container-fluid">
+		<h3>修改学生信息</h3>
 		<table class="table table-bordered table-hover">
 			<thead>
 				<tr>

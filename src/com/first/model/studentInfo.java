@@ -11,7 +11,7 @@ public class studentInfo {
 	private String courses = "";
 	private String[] interest = { "" };
 	private String interests = "";
-	private String remark;
+	private String remark = "";
 	public int getId() {
 		return id;
 	}
@@ -56,6 +56,7 @@ public class studentInfo {
 	}
 	public String getCourses() {
 		if(course != null) {
+			courses = "";
 			for(int i=0;i<course.length;i++) {
 				courses += course[i] + "&";
 			}
@@ -74,6 +75,7 @@ public class studentInfo {
 	}
 	public String getInterests() {
 		if(interest != null) {
+			interests = "";
 			for(int i=0;i<interest.length;i++) {
 				interests += interest[i] + "&";
 			}

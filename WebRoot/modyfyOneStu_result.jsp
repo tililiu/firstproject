@@ -9,28 +9,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'addstuinfo_result.jsp' starting page</title>
+    <title>My JSP 'modyfyOneStu_result.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 
   </head>
   
   <body>
   	<%request.setCharacterEncoding("utf-8"); %>
-  	<jsp:useBean id="stuInfo" class="com.first.model.studentInfo"></jsp:useBean>
-  	<jsp:useBean id="stuInfoService" class="com.first.service.studentInfoService"></jsp:useBean>
-  	<jsp:setProperty property="*" name="stuInfo"/>
-  	
-  	<%
-  		if(stuInfoService.addStudent(stuInfo)) {
-  			out.print("添加学生信息成功");
-  		} else {
-  			out.print("添加失败");
-  		}
-  	 %>
+    <jsp:useBean id="stu" class="com.first.model.studentInfo"></jsp:useBean>
+    <jsp:useBean id="stuService" class="com.first.service.studentInfoService"></jsp:useBean>
+    <jsp:setProperty property="*" name="stu"/>
+    <%
+    	out.print(stu.getId());
+    	out.print(stu.getNickname());
+    	out.print(stu.getCourses());
+    	out.print(stu.getInterests());
+    	
+    	if(stuService.modifyStudent(stu)) {
+    		out.print("success");
+    	} else {
+    		out.print("failure");
+    	}
+     %>
   </body>
 </html>

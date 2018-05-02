@@ -103,5 +103,42 @@ public class studentInfoService {
 			return null;
 		}
 	}
+	
+	public Boolean modifyStudent(studentInfo stu) {
+		try {
+			pstmt = conn.prepareStatement("update studentinfo "
+					+ "set nickname=?, truename=?, sex=?, birthday=?, major=?, course=?, interest=?, remark=? "
+					+ "where id=?");
+			pstmt.setString(1, stu.getNickname());
+			pstmt.setString(2, stu.getTruename());
+			pstmt.setByte(3, stu.getSex());
+			pstmt.setString(4, stu.getBirthday());
+			pstmt.setString(5, stu.getMajor());
+			pstmt.setString(6, stu.getCourses());
+			pstmt.setString(7, stu.getInterests());
+			pstmt.setString(8, stu.getRemark());
+			pstmt.setInt(9, stu.getId());
+			
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+	
+	public Boolean deleteStudent(int id) {
+		try {
+			pstmt = conn.prepareStatement("delete from studentinfo where id=?");
+			pstmt.setInt(1, id);
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
 
 }

@@ -42,7 +42,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">性别</label>
 				<div class="col-sm-10">
-					<label class="radio-inline"> <input type="radio" name="sex"
+					<label class="radio-inline"> <input type="radio" name="sex" checked
 						value="1"> 男
 					</label> <label class="radio-inline"> <input type="radio"
 						name="sex" value="0"> 女
